@@ -16,9 +16,14 @@ class Home extends Component {
   getTeamsList = async () => {
     const response = await fetch(teamsApiUrl)
     const data = await response.json()
+    console.log(data)
 
     this.setState({
-      teamsList: data,
+      teamsList: data.teams.map(eachTeam => ({
+        id: eachTeam.id,
+        name: eachTeam.name,
+        teamImageUrl: eachTeam.team_image_url,
+      })),
       isLoading: false,
     })
   }
@@ -34,7 +39,7 @@ class Home extends Component {
             <Loader type="Oval" color="#ffffff" height={50} width={50} />{' '}
           </div>
         ) : (
-          <div>
+          <>
             <div className="logo-container">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/ipl-logo-img.png"
@@ -48,7 +53,7 @@ class Home extends Component {
                 <TeamCard eachTeam={eachTeam} key={eachTeam.id} />
               ))}
             </ul>
-          </div>
+          </>
         )}
       </div>
     )
