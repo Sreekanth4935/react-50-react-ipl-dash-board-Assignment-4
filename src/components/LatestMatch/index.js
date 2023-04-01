@@ -1,12 +1,12 @@
 // Write your code here
 
 import './index.css'
-// import MatchCard from '../MatchCard'
 import MatchCard from '../MatchCard'
 
 const LatestMatch = props => {
   const {latestMatchDetails, recentMatches} = props
   //   console.log(latestMatchDetails)
+  //   const {competing_team, competing_team_logo} = latestMatchDetails
   const newLatestMatchDetails = {
     competingTeam: latestMatchDetails.competing_team, // alt
     competingTeamLogo: latestMatchDetails.competing_team_logo,
@@ -29,14 +29,17 @@ const LatestMatch = props => {
       <div className="latest-match-container">
         <div className="competitor-container">
           <div>
-            <h1 className="team-name">{newLatestMatchDetails.competingTeam}</h1>
+            <p className="team-name">{newLatestMatchDetails.competingTeam}</p>
+            {/* <p className="team-name">{competing_team}</p> */}
             <p className="all">{newLatestMatchDetails.date}</p>
             <p className="all">{newLatestMatchDetails.venue}</p>
             <p className="all">{newLatestMatchDetails.result}</p>
           </div>
           <img
             src={newLatestMatchDetails.competingTeamLogo}
-            alt={newLatestMatchDetails.competingTeam}
+            // src={competing_team_logo}
+            // alt={newLatestMatchDetails.competingTeam}
+            alt={`latest match ${newLatestMatchDetails.competingTeam}`}
             className="competing-img"
           />
         </div>

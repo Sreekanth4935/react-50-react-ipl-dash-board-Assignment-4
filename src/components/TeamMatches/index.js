@@ -46,7 +46,6 @@ class TeamMatches extends Component {
     return (
       <>
         <div>
-          {/* alt should be modified */}
           <img
             src={teamBannerUrl}
             alt="team banner"
@@ -66,11 +65,10 @@ class TeamMatches extends Component {
     const {isLoading, randomNumber} = this.state
 
     return (
-      //   <div className="team-details-container">
       <div className={`team-details-container ${colorList[randomNumber]}`}>
         {isLoading ? (
           <div data-testid="loader" className="loader-container">
-            <Loader type="Oval" color="#ffffff" height={50} width={50} />{' '}
+            <Loader type="Rings" color="#00BFFF" height={80} width={80} />
           </div>
         ) : (
           this.renderTeamMatches()

@@ -11,13 +11,9 @@ const MatchCard = props => {
     matchStatus: eachItem.match_status,
     competingTeamLogo: eachItem.competing_team_logo,
   }
-  const {
-    id,
-    competingTeamLogo,
-    result,
-    competingTeam,
-    matchStatus,
-  } = newEachItem
+  //   const {competing_team, competing_team_logo} = eachItem
+
+  const {competingTeamLogo, result, competingTeam, matchStatus} = newEachItem
 
   const winOrLoss = matchStatus === 'Won' ? 'green' : 'red'
 
@@ -25,10 +21,13 @@ const MatchCard = props => {
     <li className="list-item-container">
       <img
         src={competingTeamLogo}
-        alt={competingTeam}
+        // src={competing_team_logo}
+        alt={`competing team ${competingTeam}`}
+        // alt={`competing team ${competing_team}`}
         className="competing-image"
       />
-      <h1 className="heading2">{competingTeam}</h1>
+      {/* <p className="heading2">{competing_team}</p> */}
+      <p className="heading2">{competingTeam}</p>
       <p>{result}</p>
       <p className={winOrLoss}>{matchStatus}</p>
     </li>
