@@ -4,7 +4,7 @@ import Loader from 'react-loader-spinner'
 import './index.css'
 import LatestMatch from '../LatestMatch'
 
-const colorList = ['one', 'two', 'three', 'four', 'five']
+// const colorList = ['one', 'two', 'three', 'four', 'five']
 
 class TeamMatches extends Component {
   state = {
@@ -26,7 +26,7 @@ class TeamMatches extends Component {
     const data = await response.json()
     // console.log('hi', data)
 
-    const newRandomNumber = Math.floor(Math.random() * 5)
+    // const newRandomNumber = Math.floor(Math.random() * 5)
 
     this.setState({
       teamMatchDetails: {
@@ -35,7 +35,7 @@ class TeamMatches extends Component {
         recentMatches: data.recent_matches,
       },
       isLoading: false,
-      randomNumber: newRandomNumber,
+      //   randomNumber: newRandomNumber,
     })
   }
 
@@ -62,10 +62,13 @@ class TeamMatches extends Component {
   }
 
   render() {
-    const {isLoading, randomNumber} = this.state
+    const {isLoading} = this.state
+    const {match} = this.props
+    const {params} = match
+    const {id} = params
 
     return (
-      <div className={`team-details-container ${colorList[randomNumber]}`}>
+      <div className={`team-details-container ${id}`}>
         {isLoading ? (
           <div data-testid="loader" className="loader-container">
             <Loader type="Rings" color="#00BFFF" height={80} width={80} />
