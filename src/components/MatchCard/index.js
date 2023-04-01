@@ -11,7 +11,6 @@ const MatchCard = props => {
     matchStatus: eachItem.match_status,
     competingTeamLogo: eachItem.competing_team_logo,
   }
-  //   const {competing_team, competing_team_logo} = eachItem
 
   const {competingTeamLogo, result, competingTeam, matchStatus} = newEachItem
 
