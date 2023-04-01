@@ -1,19 +1,5 @@
 /* Write your CSS here */
-.one {
-  background-image: linear-gradient(to bottom, #d91c1f, #13418b);
-}
-.two {
-  background-image: linear-gradient(to bottom, #a4261d, #5755a7);
-}
-.three {
-  background-image: linear-gradient(to bottom, #f26d22, #f7db00);
-}
-.four {
-  background-image: linear-gradient(to bottom, #13418b, #f26d22);
-}
-.five {
-  background-image: linear-gradient(to bottom, #4f5db0, #0f172a);
-}
+
 .team-details-container {
   min-height: 100vh;
   background-size: cover;

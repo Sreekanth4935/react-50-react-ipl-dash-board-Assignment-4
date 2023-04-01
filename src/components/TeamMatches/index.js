@@ -4,8 +4,6 @@ import Loader from 'react-loader-spinner'
 import './index.css'
 import LatestMatch from '../LatestMatch'
 
-// const colorList = ['one', 'two', 'three', 'four', 'five']
-
 class TeamMatches extends Component {
   state = {
     isLoading: true,
@@ -21,12 +19,9 @@ class TeamMatches extends Component {
     const {match} = this.props
     const {params} = match
     const {id} = params
-    // console.log('id', id)
+
     const response = await fetch(`https://apis.ccbp.in/ipl/${id}`)
     const data = await response.json()
-    // console.log('hi', data)
-
-    // const newRandomNumber = Math.floor(Math.random() * 5)
 
     this.setState({
       teamMatchDetails: {
@@ -35,7 +30,6 @@ class TeamMatches extends Component {
         recentMatches: data.recent_matches,
       },
       isLoading: false,
-      //   randomNumber: newRandomNumber,
     })
   }
 
